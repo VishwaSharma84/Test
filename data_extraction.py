@@ -1,7 +1,7 @@
 import pandas as pd
 
 def extract_data():
-    data = pd.read_csv("segmentation data.csv")
+    data = pd.read_csv("loan_data.csv")
     print(data.head())
     return data
 
