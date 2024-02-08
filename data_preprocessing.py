@@ -1,4 +1,4 @@
-from data_extarction import extract_data
+from data_extraction import extract_data
 
 def cat_to_num(df, c_var):
     for i in c_var:
