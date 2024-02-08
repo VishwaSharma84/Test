@@ -1,1 +1,29 @@
+pipeline{
+    agent any
 
+    stages{
+        stage("Extract Data"){
+            steps{
+                sh 'python3 data_extraction.py'
+            }
+        }
+
+        stage("Data Preprocessing"){
+            steps{
+                sh 'python3 data_preprocessing.py'
+            }
+        }
+
+        stage("Feature Engineering"){
+            steps{
+                sh 'python3 feature_engineering.py'
+            }
+        }
+    }
+    post{
+       
+        always {
+            archiveArtifacts artifacts: 'loan_data_cleansed.csv', onlyIfSuccessful: true
+        }
+            }
+}
