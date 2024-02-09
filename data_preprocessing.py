@@ -26,6 +26,7 @@ def data_preprocessing():
   
   c_variables = ['Gender', 'Married', 'Education', 'Education','Self_Employed', 'Loan_Status']
   cat_to_num(df, c_variables)
+  print(df)
 
   return df
 
